@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     var response = await http.post(
-      Uri.parse('http://aibible.savinsolution.io/find_verse/'),
+      Uri.parse('https://aibible.savinsolution.io/find_verse/'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },

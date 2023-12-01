@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async'; // For simulating delay
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -68,7 +69,7 @@ class _SpiritualCompanionAppState extends State<SpiritualCompanionApp> {
     });
 
     var response = await http.post(
-      Uri.parse('http://aibible.savinsolution.io/find_verse/'),
+      Uri.parse('https://aibible.savinsolution.io/find_verse/'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
