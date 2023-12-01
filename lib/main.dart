@@ -32,9 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       Duration(seconds: 3),
       () => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-            builder: (_) =>
-                SpiritualCompanionApp()), // Replace NextScreen with your main screen widget
+        MaterialPageRoute(builder: (_) => SpiritualCompanionApp()), // Replace NextScreen with your main screen widget
       ),
     );
   }
@@ -45,8 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-                'assets/images/splash_image.jpeg'), // Make sure this is the correct path to your image
+            image: AssetImage('assets/images/splash_image.jpeg'), // Make sure this is the correct path to your image
             fit: BoxFit.cover,
           ),
         ),
@@ -71,7 +68,7 @@ class _SpiritualCompanionAppState extends State<SpiritualCompanionApp> {
     });
 
     var response = await http.post(
-      Uri.parse('http://localhost:8000/find_verse/'),
+      Uri.parse('http://aibible.savinsolution.io/find_verse/'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -113,8 +110,7 @@ class _SpiritualCompanionAppState extends State<SpiritualCompanionApp> {
         ),
         textTheme: TextTheme(
           bodyText2: TextStyle(color: Colors.white),
-          headline6:
-              TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          headline6: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         inputDecorationTheme: InputDecorationTheme(
           border: OutlineInputBorder(
@@ -157,9 +153,7 @@ class _SpiritualCompanionAppState extends State<SpiritualCompanionApp> {
                 SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: _isLoading ? null : _findMessage,
-                  child: _isLoading
-                      ? CircularProgressIndicator()
-                      : Text('Temukan ayat untuk mengerti anda'),
+                  child: _isLoading ? CircularProgressIndicator() : Text('Temukan ayat untuk mengerti anda'),
                 ),
                 SizedBox(height: 16),
                 if (_displayedMessage.isNotEmpty)
