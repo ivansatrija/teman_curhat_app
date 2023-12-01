@@ -154,7 +154,7 @@ class _SpiritualCompanionAppState extends State<SpiritualCompanionApp> {
                 SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: _isLoading ? null : _findMessage,
-                  child: _isLoading ? CircularProgressIndicator() : Text('Temukan ayat untuk mengerti anda'),
+                  child: _isLoading ? CircularProgressIndicator() : Text('Sampaikan Kesulitanmu'),
                 ),
                 SizedBox(height: 16),
                 if (_displayedMessage.isNotEmpty)
